@@ -1,0 +1,16 @@
+.idea/
+**/bin/
+**/target/
+*.class
+
+*.jar
+*.iml
+.svn/
+.classpath
+.project
+.settings/
+*.log
+*.gz
+
+**/docker/openldap/config/
+**/docker/openldap/database/
