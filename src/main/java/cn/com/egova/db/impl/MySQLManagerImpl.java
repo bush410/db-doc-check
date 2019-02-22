@@ -129,6 +129,7 @@ public class MySQLManagerImpl implements DbManager {
             table.setTableName(tableMap.get("TABLE_NAME") == null ? "" : tableMap.get("TABLE_NAME").toString().toLowerCase());
             table.setTableType(tableMap.get("TABLE_TYPE") == null ? "" : tableMap.get("TABLE_TYPE").toString());
             table.setTableSchema(tableMap.get("TABLE_SCHEMA") == null ? "" : tableMap.get("TABLE_SCHEMA").toString());
+            table.setTableDes(tableMap.get("TABLE_COMMENT") == null ? "" : tableMap.get("TABLE_COMMENT").toString());
             tMap.put(table.getTableName(), table);
         }
 
@@ -137,6 +138,7 @@ public class MySQLManagerImpl implements DbManager {
             column.setTableName(columnMap.get("TABLE_NAME") == null ? "" : columnMap.get("TABLE_NAME").toString().toLowerCase());
             column.setColumnName(columnMap.get("COLUMN_NAME") == null ? "" : columnMap.get("COLUMN_NAME").toString().toLowerCase());
             column.setDataType(columnMap.get("DATA_TYPE") == null ? "" : columnMap.get("DATA_TYPE").toString());
+            column.setColumnDesc(columnMap.get("COLUMN_COMMENT") == null ? "" : columnMap.get("COLUMN_COMMENT").toString());
             column.setIsNullable(columnMap.get("IS_NULLABLE").equals("YES")? "NULL" : "NOTNULL");
             if(column.getDataType().equals("varchar")){
                 column.setPrecision(columnMap.get("CHARACTER_MAXIMUM_LENGTH") == null ? "" : columnMap.get("CHARACTER_MAXIMUM_LENGTH").toString());

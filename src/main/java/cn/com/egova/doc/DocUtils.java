@@ -370,7 +370,13 @@ public class DocUtils {
                 p.insertNewRun(0).addCarriageReturn();
                 XWPFRun r = p.createRun();//创建段落文本
                 r = p.createRun();//创建段落文本
-                r.setText("表（" + t.getValue().getTableName() + "）");
+                if(t.getValue().getTableDes() == null || t.getValue().getTableDes().equals("")){
+                    r.setText("表（" + t.getValue().getTableName() + "）");
+                }else if(t.getValue().getTableDes().endsWith("表")){
+                    r.setText(t.getValue().getTableDes() + "（" + t.getValue().getTableName() + "）");
+                }else{
+                    r.setText(t.getValue().getTableDes() + "表（" + t.getValue().getTableName() + "）");
+                }
                 r.setFontFamily("宋体");
                 r.setFontSize(14);
                 r.setBold(true);

@@ -8,6 +8,7 @@ public class Table {
     String tableName;
     String tableType;  // 表还是视图
     String tableSchema;
+    String tableDes;
 
     boolean existFlag = false; //是否在文档中存在
 
@@ -61,5 +62,13 @@ public class Table {
 
     public void setExistFlag(boolean existFlag) {
         this.existFlag = existFlag;
+    }
+
+    public String getTableDes() {
+        return tableDes;
+    }
+
+    public void setTableDes(String tableDes) {
+        this.tableDes = tableDes;
     }
 }
